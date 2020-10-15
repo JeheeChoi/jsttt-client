@@ -12,6 +12,51 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>J's T.T.T.</h1>
+      <br>
+      <h3>Sign Up</h3>
+      <form id="sign-up">
+        <label for="sign-up-email">Email</label>
+        <input required type="text" name="credentials[email]" placeholder ="an@example.com" />
+        <br>
+        <label for="sign-up-password">Password</label>
+        <input required type="password" name="credentials[password]" />
+        <label for="sign-up-password-confirmation">Confirm Password</label>
+        <input required type="password" name="credentials[password_confirmation]" />
+        <input type="Submit" value="REGISTER" />
+        <div id="sign-up-display"></div>
+      </form>
+      <br>
+
+      <h3>Sign In</h3>
+      <form id="sign-in">
+        <label for="sign-in-email">Email</label>
+        <input required type="text" name="credentials[email]" placeholder ="an@example.com" />
+        <br>
+        <label for="sign-in-password">Password</label>
+        <input required type="password" name="credentials[password]" />
+        <input type="Submit" value="SIGN IN" />
+        <div id="sign-in-display"></div>
+      </form>
+      <br>
+
+      <h3>Sign Out</h3>
+      <form id="sign-out">
+        <input type="Submit" value="SIGN OUT" />
+        <div id="sign-out-display"></div>
+      </form>
+      <br>
+
+      <form id="change-password">
+      <h3>Change PW</h3>
+      <label for="original-password">Original Password</label>
+      <input required type="password" name="passwords[old]" />
+      <label for="new-password">New Password</label>
+      <input required type="password" name="passwords[new]" />
+      <input type="Submit" value="SUBMIT" />
+      <div id="change-pw-display"></div>
+    </form>
+    <br>
+
     </body>
 </html>
