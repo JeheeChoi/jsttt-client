@@ -1,1 +1,20 @@
 @import '~bootstrap/scss/bootstrap';
+.gameboard {
+  height: 100vh;
+}
+.row-cols-3 {
+  margin: auto;
+  height: 150px;
+  max-height: calc(100vh - 75px);
+  max-width: calc(100vh - 75px);
+
+}
+
+.col-4-box {
+  display: flex;
+  border: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100% / 3);
+  min-width: calc(100% / 3);
+}
