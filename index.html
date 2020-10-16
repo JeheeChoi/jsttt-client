@@ -24,8 +24,8 @@
         <label for="sign-up-password-confirmation">Confirm Password</label>
         <input required type="password" name="credentials[password_confirmation]" />
         <input type="Submit" value="REGISTER" />
-        <div id="sign-up-display"></div>
       </form>
+      <div id="sign-up-display"></div>
       <br>
 
       <h3>Sign In</h3>
@@ -35,9 +35,9 @@
         <br>
         <label for="sign-in-password">Password</label>
         <input required type="password" name="credentials[password]" />
-        <br>
         <input type="Submit" value="SIGN IN" />
       </form>
+      <br>
       <form id="sign-out">
         <input type="Submit" value="SIGN OUT" />
       </form>
@@ -51,9 +51,34 @@
       <label for="new-password">New Password</label>
       <input required type="password" name="passwords[new]" />
       <input type="Submit" value="SUBMIT" />
+      </form>
       <div id="change-pw-display"></div>
-    </form>
-    <br>
+      <br>
+
+      <h3>New Game</h3>
+      <form id="create-games">
+      <input type="Submit" value="PLAY" />
+      </form>
+      <br>
+
+      <div id="gameboard" class="container">
+        <div class="row row-cols-3">
+          <div class="col-4-box">Column</div>
+          <div class="col-4-box">Column</div>
+          <div class="col-4-box">Column</div>
+        </div>
+        <div class="row row-cols-3">
+          <div class="col-4-box">Column</div>
+          <div class="col-4-box">Column</div>
+          <div class="col-4-box">Column</div>
+        </div>
+        <div class="row row-cols-3">
+          <div class="col-4-box">Column</div>
+          <div class="col-4-box">Column</div>
+          <div class="col-4-box">Column</div>
+        </div>
+      </div>
+
 
     </body>
 </html>
