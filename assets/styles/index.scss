@@ -18,3 +18,12 @@
   min-height: calc(100% / 3);
   min-width: calc(100% / 3);
 }
+
+.box {
+    font-size: 10vh;
+    &:hover {
+      background-color: Black;
+      color: white;
+    user-select: none;
+    }
+}
