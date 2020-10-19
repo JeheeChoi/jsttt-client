@@ -2,7 +2,8 @@ const api = require('./api')
 const ui = require('./ui')
 
 const gameData = ['', '', '', '', '', '', '', '', '']
-let player = 'x'
+let player = 'X'
+let over = false
 
 const createGames = function (event) {
   event.preventDefault()
@@ -13,15 +14,35 @@ const createGames = function (event) {
 
 const playGames = function (event) {
   event.preventDefault()
-  console.log(event)
-  console.log(event.target.dataset.cellIndex)
+  if ($(event.target).text() === 'X' || $(event.target).text() === 'O') return
   const cellIndex = event.target.dataset.cellIndex
+
   gameData[cellIndex] = player
-  player = player === 'x' ? 'o' : 'x'
-  console.log(gameData)
+
+  const data = {
+    game: {
+      cell: {
+        index: cellIndex,
+        value: player
+      },
+      over: over
+    }
+  }
+  player = player === 'X' ? 'O' : 'X'
+  api.playGames(data)
+    .then(ui.onPlayGamesSuccess)
+    .catch(ui.onPlayGamesError)
+}
+
+const indexGames = function (event) {
+  event.preventDefault()
+  api.indexGames()
+    .then(ui.onIndexGamesSuccess)
+    .catch(ui.onIndexGamesError)
 }
 
 module.exports = {
   createGames,
-  playGames
+  playGames,
+  indexGames
 }

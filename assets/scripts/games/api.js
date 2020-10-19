@@ -15,6 +15,28 @@ const createGames = formData => {
   })
 } // else { console.log('User not logged in.') }
 
+const playGames = gameData => {
+  return $.ajax({
+    url: config.apiUrl + '/games/' + store.game._id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: gameData
+  })
+}
+const indexGames = formData => {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createGames
+  createGames,
+  playGames,
+  indexGames
 }
