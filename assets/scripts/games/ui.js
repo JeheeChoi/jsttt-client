@@ -1,6 +1,6 @@
 
 const onCreateGamesSuccess = function (res) {
-  $('#create-games-display').text('Successfully Created A Game!')
+  $('#create-games-display').text('Successfully Created A New Game!')
   console.log(res)
 }
 
@@ -10,9 +10,10 @@ const onCreateGamesError = function (error) {
 }
 
 const onPlayGamesSuccess = function (res) {
-  $('#play-games-display').text('Successfully Started Playing Games!')
-  console.log(res)
+  event.preventDefault()
+  $('.box').text('X')
 }
+
 const onPlayGamesError = function (error) {
   $('#play-games-display').text('Error Playing Games Code: ' + error.statusText)
   console.log('error is:', error)
