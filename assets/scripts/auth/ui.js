@@ -16,26 +16,26 @@ const onSignUpError = function (error) {
 const onSignInSuccess = function (res) {
   const user = res.user
   store.user = res.user
-  $('#sign-in-out-display').html(`
+  $('#sign-in-display').html(`
     <p>Hello
     ${user.email}! </p>
   `)
   $('#sign-in').trigger('reset')
 }
 const onSignInError = function (error) {
-  $('#sign-in-out-display').text('Error Signing In Code: ' + error.statusText)
+  $('#sign-in-display').text('Error Signing In Code: ' + error.statusText)
   console.log('error is:', error)
   $('#sign-in').trigger('reset')
 }
 
 const onSignOutSuccess = function () {
-  $('#sign-in-out-display').html(`
+  $('#sign-out-display').html(`
     <p>User ${store.user.email} successfully signed out! </p>
   `)
 }
 
 const onSignOutError = function (error) {
-  $('#sign-in-out-display').text('Error Signing Out Code: ' + error.statusText)
+  $('#sign-out-display').text('Error Signing Out Code: ' + error.statusText + '. ' + 'Please Sign In First!')
   console.log('error is:', error)
 }
 
@@ -45,7 +45,7 @@ const onChangePwSuccess = function () {
 }
 
 const onChangePwError = function (error) {
-  $('#change-pw-display').text('Error Changing Password Code: ' + error.statusText)
+  $('#change-pw-display').text('Error Changing Password Code: ' + error.statusText + '. ' + 'Please Sign In First!')
   console.log('error is:', error)
   $('#change-password').trigger('reset')
 }

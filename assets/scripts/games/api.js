@@ -25,18 +25,31 @@ const playGames = gameData => {
     data: gameData
   })
 }
-const indexGames = formData => {
+
+const showGames = formData => {
+  const user = store.user
+  const headers = {}
+  if (user) {
+    headers.Authorization = 'Bearer ' + user.token
+  }
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+    data: {},
+    headers
   })
 }
+//   return $.ajax({
+//     url: config.apiUrl + '/games',
+//     method: 'GET',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 
 module.exports = {
   createGames,
   playGames,
-  indexGames
+  showGames
 }

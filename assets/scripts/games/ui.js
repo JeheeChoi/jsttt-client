@@ -7,12 +7,12 @@ const onCreateGamesSuccess = function (res) {
 }
 
 const onCreateGamesError = function (error) {
-  $('#create-games-display').text('Error Creating Games Code: ' + error.statusText)
+  $('#create-games-display').text('Error Creating Games Code: ' + error.statusText + '. ' + 'Please Sign In First!')
   console.log('error is:', error)
 }
 
 const onPlayGamesSuccess = function (res) {
-  $('#index-games-display').text('Successfully played a game')
+  $('#gameboard-message').text('Successfully played a game')
   console.log(res)
   const cells = res.game.cells
   for (let i = 0; i < cells.length; i++) {
@@ -24,16 +24,14 @@ const onPlayGamesSuccess = function (res) {
 }
 
 const onPlayGamesError = function (error) {
-  $('#play-games-display').text('Error Playing Games Code: ' + error.statusText)
+  $('#gameboard-message').text('Error Playing Games Code: ' + error.statusText)
   console.log('error is:', error)
 }
 
-const onIndexGamesSuccess = function (res) {
-  $('#index-games-display').text('User Game History: ', res)
+const onShowGamesSuccess = function (res) {
   console.log(res)
   const games = res.games
-
-  $('#index-games-display').text(games.length)
+  $('#show-games-display').text('# of games played: ' + games.length)
 
   // games.forEach(function (currentGame) {
   //  const gamesHTML = (`
@@ -44,8 +42,8 @@ const onIndexGamesSuccess = function (res) {
   // })
 }
 
-const onIndexGamesError = function (error) {
-  $('#show-games-display').text('Error Showing Games Code: ' + error.statusText)
+const onShowGamesError = function (error) {
+  $('#show-games-display').text('Error Showing Games Code: ' + error.statusText + '. ' + 'Please Sign In First!')
   console.log('error is:', error)
 }
 
@@ -54,6 +52,6 @@ module.exports = {
   onCreateGamesError,
   onPlayGamesSuccess,
   onPlayGamesError,
-  onIndexGamesSuccess,
-  onIndexGamesError
+  onShowGamesSuccess,
+  onShowGamesError
 }

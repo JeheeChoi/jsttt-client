@@ -34,15 +34,20 @@ const playGames = function (event) {
     .catch(ui.onPlayGamesError)
 }
 
-const indexGames = function (event) {
+const checkResult = function () {
+  const cellIndex = event.target.dataset.cellIndex
+  gameData[cellIndex] = player
+}
+
+const showGames = function (event) {
   event.preventDefault()
-  api.indexGames()
-    .then(ui.onIndexGamesSuccess)
-    .catch(ui.onIndexGamesError)
+  api.showGames()
+    .then(ui.onShowGamesSuccess)
+    .catch(ui.onShowGamesError)
 }
 
 module.exports = {
   createGames,
   playGames,
-  indexGames
+  showGames
 }

@@ -16,24 +16,48 @@ const signIn = formData => {
   })
 }
 const signOut = formData => {
+  const user = store.user
+  const headers = {}
+  if (user) {
+    headers.Authorization = 'Bearer ' + user.token
+  }
   return $.ajax({
     url: config.apiUrl + '/sign-out',
     method: 'DELETE',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
+    data: {},
+    headers
   })
 }
+//   return $.ajax({
+//     url: config.apiUrl + '/sign-out',
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     }
+//   })
+// }
 const changePassword = formData => {
+  const user = store.user
+  const headers = {}
+  if (user) {
+    headers.Authorization = 'Bearer ' + user.token
+  }
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    },
-    data: formData
+    data: formData,
+    headers
   })
 }
+//   return $.ajax({
+//     url: config.apiUrl + '/change-password',
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: 'Token token=' + store.user.token
+//     },
+//     data: formData
+//   })
+// }
 
 module.exports = {
   signUp,

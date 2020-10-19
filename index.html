@@ -37,11 +37,14 @@
         <input required type="password" name="credentials[password]" />
         <input type="Submit" value="SIGN IN" />
       </form>
+        <div id="sign-in-display"></div>
       <br>
+
+      <h3>Sign Out</h3>
       <form id="sign-out">
         <input type="Submit" value="SIGN OUT" />
       </form>
-      <div id="sign-in-out-display"></div>
+      <div id="sign-out-display"></div>
         <br>
 
       <form id="change-password">
@@ -60,10 +63,13 @@
       <div id="create-games-display"></div>
       <br>
 
-      <h3>Games Payed</h3>
-      <button id="index-games">Get All Games Played</button>
-      <div id="index-games-display"></div>
+      <h3>Games Played</h3>
+      <button id="show-games">VIEW</button>
+      <div id="show-games-display"></div>
       <br>
+      <br>
+
+      <div id="gameboard-message"></div>
 
       <div id="gameboard" class="container">
         <div class="row row-cols-3">
