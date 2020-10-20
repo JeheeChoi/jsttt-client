@@ -12,15 +12,28 @@ const onCreateGamesError = function (error) {
 }
 
 const onPlayGamesSuccess = function (res) {
-  $('#gameboard-message').text('Successfully played a game')
   console.log(res)
-  const cells = res.game.cells
-  for (let i = 0; i < cells.length; i++) {
-    if (cells[i]) {
-      const box = $('.box')[i]
-      $(box).text(cells[i])
-    }
-  }
+  $('#game-board-message').text('Next turn: ')
+  // const cells = res.game.cells
+  // for (let i = 0; i < cells.length; i++) {
+  // console.log('Player ' + cells[i] + ' clicked Box# ' + cells.indexOf(cells[i]))
+  // if (cells[i] !== '') {
+  //   const box = $('.box')[i]
+  // box1 = $('#0').text()
+  // box2 = $('#1').text()
+  // box3 = $('#2').text()
+  // box4 = $('#3').text()
+  // box5 = $('#4').text()
+  // box6 = $('#5').text()
+  // box7 = $('#6').text()
+  // box8 = $('#7').text()
+  // box9 = $('#8').test()
+  //   $(box).text(cells[i])
+  //   cells.forEach(i => console.log(i))
+  //   $('#gameboard-message').text('Player ' + cells[i] + ' clicked box#: ' + cells.indexOf(cells[i]))
+  // }
+  // $('#gameboard-message').text('Player Clicked Box# ' + cells.indexOf(cells[i]))
+  // }
 }
 
 const onPlayGamesError = function (error) {
