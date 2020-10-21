@@ -10,10 +10,17 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
     </head>
-    <body>
-      <h1>J's T.T.T.</h1>
       <br>
+      <body class="text-center">
+      <form class="form-signin">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
+      <h5>By C3(Crying.Coding.Choi)</h5>
+      <br>
+
       <h3>Sign Up</h3>
       <form id="sign-up">
         <label for="sign-up-email">Email</label>
@@ -21,6 +28,7 @@
         <br>
         <label for="sign-up-password">Password</label>
         <input required type="password" name="credentials[password]" />
+        <br>
         <label for="sign-up-password-confirmation">Confirm Password</label>
         <input required type="password" name="credentials[password_confirmation]" />
         <input type="Submit" value="REGISTER" />
@@ -51,23 +59,36 @@
       <h3>Change PW</h3>
       <label for="original-password">Original Password</label>
       <input required type="password" name="passwords[old]" />
+      <br>
       <label for="new-password">New Password</label>
       <input required type="password" name="passwords[new]" />
       <input type="Submit" value="SUBMIT" />
       </form>
       <div id="change-pw-display"></div>
       <br>
+    </form>
 
-      <h3>New Game</h3>
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options" id="create-games" checked>PLAY A New Game
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="show-games"> VIEW # Of Games
+        </label>
+      </div>
+      <div id="create-games-display"></div>
+      <div id="show-games-display"></div>
+      <br>
+      <br>
+      <!-- <h3>New Game</h3>
       <button id="create-games">PLAY</button>
       <div id="create-games-display"></div>
       <br>
 
       <h3>Games Played</h3>
       <button id="show-games">VIEW</button>
-      <div id="show-games-display"></div>
-      <br>
-      <br>
+
+       -->
 
       <div id="gameboard-message"></div>
 

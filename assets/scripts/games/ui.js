@@ -12,8 +12,8 @@ const onCreateGamesError = function (error) {
 }
 
 const onPlayGamesSuccess = function (res) {
-  console.log(res)
   $('#game-board-message').text('Next turn: ')
+  console.log(res)
   // const cells = res.game.cells
   // for (let i = 0; i < cells.length; i++) {
   // console.log('Player ' + cells[i] + ' clicked Box# ' + cells.indexOf(cells[i]))

@@ -19,11 +19,12 @@ const playGames = function (event) {
     // add the player token to the clicked box
     $(event.target).text(player)
   }
+  $('#gameboard-message').text('Player ' + player + ' just played')
+
   // then add the player token to the gameData array
   const index = event.target.id
   gameData[index] = player
-  console.log(index)
-  console.log(gameData)
+  console.log(index, gameData)
 
   // check if the player wins the game
   checkGameResult()
@@ -38,7 +39,6 @@ const playGames = function (event) {
       over: over
     }
   }
-
   // it changes the turn of the player,}
   player = player === 'X' ? 'O' : 'X'
 
@@ -49,33 +49,41 @@ const playGames = function (event) {
 }
 
 const checkGameResult = function () {
-  const box1 = $('#0').text()
-  const box2 = $('#1').text()
-  const box3 = $('#2').text()
-  const box4 = $('#3').text()
-  const box5 = $('#4').text()
-  const box6 = $('#5').text()
-  const box7 = $('#6').text()
-  const box8 = $('#7').text()
-  const box9 = $('#8').text()
+  const box1 = gameData[0]
+  const box2 = gameData[1]
+  const box3 = gameData[2]
+  const box4 = gameData[3]
+  const box5 = gameData[4]
+  const box6 = gameData[5]
+  const box7 = gameData[6]
+  const box8 = gameData[7]
+  const box9 = gameData[8]
 
-  // const checkResult = function (event) {
-  if (box1 === box2 && box1 === box3) {
-    console.log('Player ' + box1 + ' wins!')
-  } else if (box4 === box5 && box4 === box6) {
-    console.log('Player ' + box4 + ' wins!')
-  } else if (box7 === box8 && box7 === box9) {
-    console.log('Player ' + box7 + ' wins!')
-  } else if (box1 === box4 && box1 === box7) {
-    console.log('Player ' + box1 + ' wins!')
-  } else if (box2 === box5 && box2 === box8) {
-    console.log('Player ' + box2 + ' wins!')
-  } else if (box3 === box6 && box3 === box9) {
-    console.log('Player ' + box3 + ' wins!')
-  } else if (box1 === box5 && box1 === box9) {
-    console.log('Player ' + box5 + ' wins!')
-  } else if (box3 === box5 && box3 === box7) {
-    console.log('Player ' + box5 + ' wins!')
+  console.log(box1)
+  console.log(box2)
+  console.log(box3)
+  console.log(box4)
+  console.log(box5)
+  console.log(box6)
+  console.log(box7)
+  console.log(box8)
+
+  if (box1 !== '' && box1 === box2 && box1 === box3) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  } else if (box4 !== '' && box4 === box5 && box4 === box6) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  } else if (box7 !== '' && box8 && box7 === box9) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  } else if (box1 !== '' && box1 === box4 && box1 === box7) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  } else if (box2 !== '' && box2 === box5 && box2 === box8) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  } else if (box3 !== '' && box3 === box6 && box3 === box9) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  } else if (box1 !== '' && box1 === box5 && box1 === box9) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  } else if (box3 !== '' && box3 === box5 && box3 === box7) {
+    $('#gameboard-message').text('Player ' + player + ' wins!')
   }
 }
 
