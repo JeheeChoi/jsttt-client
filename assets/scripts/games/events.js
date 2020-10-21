@@ -16,7 +16,7 @@ const playGames = function (event) {
   event.preventDefault()
   // if the box is empty(no X or O on it)
   if ($(event.target).text() !== 'X' && $(event.target).text() !== 'O') {
-    // add the player token to the clicked box
+  // add the player token to the clicked box
     $(event.target).text(player)
   }
   $('#gameboard-message').text('Player ' + player + ' just played')
