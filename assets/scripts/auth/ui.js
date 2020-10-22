@@ -8,11 +8,7 @@ const onSignUpSuccess = function (res) {
   `)
   $('#sign-up').trigger('reset')
 }
-const onSignUpError = function (error) {
-  $('#sign-up-display').text('Error Signing Up Code: ' + error.statusText)
-  console.log('error is:', error)
-  $('#sign-up').trigger('reset')
-}
+
 const onSignInSuccess = function (res) {
   const user = res.user
   store.user = res.user
@@ -22,11 +18,6 @@ const onSignInSuccess = function (res) {
   `)
   $('#sign-in').trigger('reset')
 }
-const onSignInError = function (error) {
-  $('#sign-in-display').text('Error Signing In Code: ' + error.statusText)
-  console.log('error is:', error)
-  $('#sign-in').trigger('reset')
-}
 
 const onSignOutSuccess = function () {
   $('#sign-out-display').html(`
@@ -34,14 +25,26 @@ const onSignOutSuccess = function () {
   `)
 }
 
-const onSignOutError = function (error) {
-  $('#sign-out-display').text('Error Signing Out Code: ' + error.statusText + '. ' + 'Please Sign In First!')
-  console.log('error is:', error)
-}
-
 const onChangePwSuccess = function () {
   $('#change-pw-display').text('Password successfully changed!')
   $('#change-password').trigger('reset')
+}
+
+const onSignUpError = function (error) {
+  $('#sign-up-display').text('Error Signing Up Code: ' + error.statusText)
+  console.log('error is:', error)
+  $('#sign-up').trigger('reset')
+}
+
+const onSignInError = function (error) {
+  $('#sign-in-display').text('Error Signing In Code: ' + error.statusText)
+  console.log('error is:', error)
+  $('#sign-in').trigger('reset')
+}
+
+const onSignOutError = function (error) {
+  $('#sign-out-display').text('Error Signing Out Code: ' + error.statusText + '. ' + 'Please Sign In First!')
+  console.log('error is:', error)
 }
 
 const onChangePwError = function (error) {
@@ -52,11 +55,11 @@ const onChangePwError = function (error) {
 
 module.exports = {
   onSignUpSuccess,
-  onSignUpError,
   onSignInSuccess,
-  onSignInError,
   onSignOutSuccess,
-  onSignOutError,
   onChangePwSuccess,
+  onSignUpError,
+  onSignInError,
+  onSignOutError,
   onChangePwError
 }
