@@ -12,8 +12,8 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 
     </head>
-      <br>
-      <body class="text-center">
+    <br>
+    <body class="text-center">
       <form class="form-signin">
       <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
       <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
@@ -23,26 +23,28 @@
 
       <h3>Sign Up</h3>
       <form id="sign-up">
-        <label for="sign-up-email">Email</label>
-        <input required type="text" name="credentials[email]" placeholder ="an@example.com" />
+        <label for="sign-up-email"></label>
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
         <br>
-        <label for="sign-up-password">Password</label>
-        <input required type="password" name="credentials[password]" />
+        <label for="sign-up-password"></label>
+        <input required type="password" name="credentials[password]" placeholder="Password" />
         <br>
-        <label for="sign-up-password-confirmation">Confirm Password</label>
-        <input required type="password" name="credentials[password_confirmation]" />
+        <label for="sign-up-password-confirmation"></label>
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm password" /><br>
         <input type="Submit" value="REGISTER" />
       </form>
+
       <div id="sign-up-display"></div>
+
       <br>
 
       <h3>Sign In</h3>
       <form id="sign-in">
-        <label for="sign-in-email">Email</label>
-        <input required type="text" name="credentials[email]" placeholder ="an@example.com" />
+        <label for="sign-in-email"></label>
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
         <br>
-        <label for="sign-in-password">Password</label>
-        <input required type="password" name="credentials[password]" />
+        <label for="sign-in-password"></label>
+        <input required type="password" name="credentials[password]" placeholder="Password"/><br>
         <input type="Submit" value="SIGN IN" />
       </form>
         <div id="sign-in-display"></div>
@@ -55,13 +57,14 @@
       <div id="sign-out-display"></div>
         <br>
 
-      <form id="change-password">
+
       <h3>Change PW</h3>
-      <label for="original-password">Original Password</label>
-      <input required type="password" name="passwords[old]" />
+      <form id="change-password">
+      <label for="original-password"></label>
+      <input required type="password" name="passwords[old]" placeholder="Original password"/>
       <br>
-      <label for="new-password">New Password</label>
-      <input required type="password" name="passwords[new]" />
+      <label for="new-password"></label>
+      <input required type="password" name="passwords[new]" placeholder="New password" /><br>
       <input type="Submit" value="SUBMIT" />
       </form>
       <div id="change-pw-display"></div>
