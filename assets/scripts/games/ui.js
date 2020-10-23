@@ -4,6 +4,7 @@ const onCreateGamesSuccess = function (res) {
   $('#create-games-display').text('Successfully Created A New Game!')
   console.log(res)
   store.game = res.game
+  $('#create-games').trigger('reset')
 }
 
 const onCreateGamesError = function (error) {
@@ -37,6 +38,7 @@ const onShowGamesSuccess = function (res) {
   console.log(res)
   const games = res.games
   $('#show-games-display').text('# of games played: ' + games.length)
+  $('#show-games').trigger('reset')
 
   // games.forEach(function (currentGame) {
   //  const gamesHTML = (`
