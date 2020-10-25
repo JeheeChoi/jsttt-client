@@ -1,7 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
+
 body {
   background-color: #f5f5f5;
 }
+.mb-4 {
+  margin-top: 50px;
+}
+// Authentication containers(sign up/sign in/sign out/change pw)
+.container-auth {
+  border: 3px solid #fff;
+  padding: 10px;
+  margin: 50px 300px;
+  float: center;
+}
+.container-auth input {
+  margin: 8px;
+}
+
 .gameboard {
   height: 100vh;
 }

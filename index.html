@@ -13,69 +13,73 @@
 
     </head>
     <body class="text-center">
-      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
-      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
-      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="72" height="72">
-      <h5>By C3(Crying.Coding.Choi)</h5>
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="92" height="92">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="92" height="92">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="92" height="92">
+      <h4>By C3(Crying.Coding.Choi)</h4>
       <br>
 
-      <h3>Sign Up</h3>
       <form id="sign-up">
+      <div class="container-auth">
+        <h3>Sign Up</h3>
       <!-- <label for="sign-up-email">Email</label> -->
-      <input required type="text" name="credentials[email]" placeholder ="Email address" />
-      <br>
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
       <!-- <label for="sign-up-password">Password</label> -->
-      <input required type="password" name="credentials[password]" placeholder="Password" />
-      <br>
+        <input required type="password" name="credentials[password]" placeholder="Password" />
       <!-- <label for="sign-up-password-confirmation"></label> -->
-      <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm password" /><br>
-      <input type="Submit" value="REGISTER" />
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm password" /><br>
+        <input type="Submit" value="REGISTER" />
+      </div>
       </form>
-
       <div id="sign-up-display"></div>
 
-      <br>
 
-      <h3>Sign In</h3>
       <form id="sign-in">
-      <!-- <label for="sign-in-email"></label> -->
-      <input required type="text" name="credentials[email]" placeholder ="Email address" />
-      <br>
-      <!-- <label for="sign-in-password"></label> -->
-      <input required type="password" name="credentials[password]" placeholder="Password"/><br>
-      <input type="Submit" value="SIGN IN" />
+      <div class="container-auth">
+        <h3>Sign In</h3>
+        <!-- <label for="sign-in-email"></label> -->
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
+        <!-- <label for="sign-in-password"></label> -->
+        <input required type="password" name="credentials[password]" placeholder="Password"/><br>
+        <input type="Submit" value="SIGN IN" />
+      </div>
       </form>
       <div id="sign-in-display"></div>
+
       <br>
 
-      <h3>Sign Out</h3>
       <form id="sign-out">
+      <div class="container-auth">
+      <h3>Sign Out</h3>
         <input type="Submit" value="SIGN OUT" />
+      </div>
       </form>
       <div id="sign-out-display"></div>
-        <br>
 
-
-      <h3>Change PW</h3>
       <form id="change-password">
+      <div class="container-auth">
+      <h3>Change PW</h3>
       <!-- <label for="original-password"></label> -->
       <input required type="password" name="passwords[old]" placeholder="Original password"/>
       <br>
       <!-- <label for="new-password"></label> -->
       <input required type="password" name="passwords[new]" placeholder="New password" /><br>
       <input type="Submit" value="SUBMIT" />
+      </div>
       </form>
       <div id="change-pw-display"></div>
       <br>
 
-      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <form id="create-show-games">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons" >
         <label class="btn btn-secondary active">
-          <input type="radio" name="options" id="create-games" checked>PLAY A New Game
+          <input type="radio" name="options" id="create-games" />PLAY A New Game
         </label>
         <label class="btn btn-secondary">
-          <input type="radio" name="options" id="show-games"> VIEW # Of Games
+          <input type="radio" name="options" id="show-games" /> VIEW # Of Games
         </label>
       </div>
+      </form>
       <div id="create-games-display"></div>
       <div id="show-games-display"></div>
       <br>

@@ -13,7 +13,7 @@ const createGames = function (event) {
     .catch(ui.onCreateGamesError)
 }
 
-const playGames = function (event) {
+const updateGames = function (event) {
   event.preventDefault()
   const index = event.target.id
 
@@ -48,9 +48,9 @@ const playGames = function (event) {
   player = player === 'X' ? 'O' : 'X'
 
   // send the data to the API
-  api.playGames(data)
-    .then(ui.onPlayGamesSuccess)
-    .catch(ui.onPlayGamesError)
+  api.updateGames(data)
+    .then(ui.onUpdateGamesSuccess)
+    .catch(ui.onUpdateGamesError)
 }
 
 const checkGameResult = function () {
@@ -100,6 +100,6 @@ const showGames = function (event) {
 
 module.exports = {
   createGames,
-  playGames,
+  updateGames,
   showGames
 }

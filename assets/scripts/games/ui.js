@@ -4,7 +4,7 @@ const onCreateGamesSuccess = function (res) {
   $('#create-games-display').text('Successfully Created A New Game!')
   console.log(res)
   store.game = res.game
-  $('#create-games').trigger('reset')
+  $('#gameboard').show()
 }
 
 const onCreateGamesError = function (error) {
@@ -12,24 +12,21 @@ const onCreateGamesError = function (error) {
   console.log('error is:', error)
 }
 
-const onPlayGamesSuccess = function (res) {
-  $('#game-board-message').text('Next turn: ')
+const onUpdateGamesSuccess = function (res) {
+  $('#gameboard-message').text('Next turn: ')
   console.log(res)
   // const cells = res.game.cells
-  // for (let i = 0; i < cells.length; i++) {
-  // console.log('Player ' + cells[i] + ' clicked Box# ' + cells.indexOf(cells[i]))
-  // if (cells[i] !== '') {
-  //   const box = $('.box')[i]
-  //
-  //   $(box).text(cells[i])
-  //   cells.forEach(i => console.log(i))
-  //   $('#gameboard-message').text('Player ' + cells[i] + ' clicked box#: ' + cells.indexOf(cells[i]))
-  // }
-  // $('#gameboard-message').text('Player Clicked Box# ' + cells.indexOf(cells[i]))
-  // }
+//   for (let i = 0; i < cells.length; i++) {
+//     if (cells[i] !== '') {
+//       const box = $('.box')[i]
+//
+//       $(box).text(cells[i])
+//     }
+//   }
+// }
 }
 
-const onPlayGamesError = function (error) {
+const onUpdateGamesError = function (error) {
   $('#gameboard-message').text('Error Playing Games Code: ' + error.statusText)
   console.log('error is:', error)
 }
@@ -57,8 +54,8 @@ const onShowGamesError = function (error) {
 module.exports = {
   onCreateGamesSuccess,
   onCreateGamesError,
-  onPlayGamesSuccess,
-  onPlayGamesError,
+  onUpdateGamesSuccess,
+  onUpdateGamesError,
   onShowGamesSuccess,
   onShowGamesError
 }

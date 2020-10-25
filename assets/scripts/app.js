@@ -8,11 +8,19 @@ const gameEvents = require('./games/events')
 // require('./example')
 
 $(() => {
+  // Hide these when you first open the webpage
+  $('#sign-out').hide()
+  $('#change-password').hide()
+  $('#create-games').hide()
+  $('#create-show-games').hide()
+  $('#gameboard').hide()
+  $('#change-password').hide()
+  // Eventlisteners
   $('#sign-up').on('submit', authEvents.signUp)
   $('#sign-in').on('submit', authEvents.signIn)
   $('#sign-out').on('submit', authEvents.signOut)
   $('#change-password').on('submit', authEvents.changePassword)
   $('#create-games').on('click', gameEvents.createGames)
   $('#show-games').on('click', gameEvents.showGames)
-  $('.box').on('click', gameEvents.playGames)
+  $('.box').on('click', gameEvents.updateGames)
 })

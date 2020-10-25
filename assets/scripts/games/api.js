@@ -15,14 +15,14 @@ const createGames = formData => {
   })
 } // else { console.log('User not logged in.') }
 
-const playGames = gameData => {
+const updateGames = data => {
   return $.ajax({
     url: config.apiUrl + '/games/' + store.game._id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    data: gameData
+    data: data
   })
 }
 
@@ -50,6 +50,6 @@ const showGames = formData => {
 
 module.exports = {
   createGames,
-  playGames,
+  updateGames,
   showGames
 }
