@@ -5,6 +5,7 @@ const onCreateGamesSuccess = function (res) {
   console.log(res)
   store.game = res.game
   $('#gameboard').show()
+  $('.box').text('?')
 }
 
 const onCreateGamesError = function (error) {
@@ -12,7 +13,7 @@ const onCreateGamesError = function (error) {
   console.log('error is:', error)
 }
 
-const onUpdateGamesSuccess = function (res) {
+const onPlayGamesSuccess = function (res) {
   $('#gameboard-message').text('Next turn: ')
   console.log(res)
   // const cells = res.game.cells
@@ -26,7 +27,7 @@ const onUpdateGamesSuccess = function (res) {
 // }
 }
 
-const onUpdateGamesError = function (error) {
+const onPlayGamesError = function (error) {
   $('#gameboard-message').text('Error Playing Games Code: ' + error.statusText)
   console.log('error is:', error)
 }
@@ -54,8 +55,8 @@ const onShowGamesError = function (error) {
 module.exports = {
   onCreateGamesSuccess,
   onCreateGamesError,
-  onUpdateGamesSuccess,
-  onUpdateGamesError,
+  onPlayGamesSuccess,
+  onPlayGamesError,
   onShowGamesSuccess,
   onShowGamesError
 }

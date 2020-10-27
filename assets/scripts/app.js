@@ -21,6 +21,10 @@ $(() => {
   $('#sign-out').on('submit', authEvents.signOut)
   $('#change-password').on('submit', authEvents.changePassword)
   $('#create-games').on('click', gameEvents.createGames)
+  // $('#create-games').on('click', function (event) {
+  //   gameData = ['', '', '', '', '', '', '', '', '']
+  //   gameEvents.createGames(event)
+  // })
   $('#show-games').on('click', gameEvents.showGames)
-  $('.box').on('click', gameEvents.updateGames)
+  $('.box').on('click', gameEvents.playGames)
 })

@@ -1,19 +1,21 @@
 const api = require('./api')
 const ui = require('./ui')
 
-const gameData = ['', '', '', '', '', '', '', '', '']
+let gameData = ['', '', '', '', '', '', '', '', '']
 let player = 'X'
 let over = false
 
 const createGames = function (event) {
   event.preventDefault()
-  $()
   api.createGames()
     .then(ui.onCreateGamesSuccess)
+    .then(() => $('.box').on('click', playGames))
+    .then(() => { over = false })
+    .then(() => { gameData = ['', '', '', '', '', '', '', '', ''] })
     .catch(ui.onCreateGamesError)
 }
 
-const updateGames = function (event) {
+const playGames = function (event) {
   event.preventDefault()
   const index = event.target.id
 
@@ -21,39 +23,40 @@ const updateGames = function (event) {
   if ($(event.target).text() !== 'X' && $(event.target).text() !== 'O') {
   // add the player token to the clicked box
     $(event.target).text(player)
+    // then add the player token to the gameData array
+    gameData[index] = player
+    console.log(gameData)
+    // check if the player wins the game
+    checkGameResult()
+
+    // build the data object to pass to play games
+
+    const data = {
+      game: {
+        cell: {
+          index: index,
+          value: player
+        },
+        over: over
+      }
+    }
+
+    // send the data to the API
+    api.updateGames(data)
+      .then(ui.onPlayGamesSuccess)
+      .catch(ui.onPlayGamesError)
+
+    // it changes the turn of the player,}
+    player = player === 'X' ? 'O' : 'X'
   // if the box is either X or O, the player can't choose the clicked the box to change the text on it
   // and it doesn't update the game array
   } else if ($(event.target).text() === 'X' || $(event.target).text() === 'O') {
     $('#gameboard-message').text('The box has been clicked already!')
   }
-  // then add the player token to the gameData array
-  gameData[index] = player
-  console.log(index, gameData)
-
-  // check if the player wins the game
-  checkGameResult()
-
-  // build the data object to pass to play games
-  const data = {
-    game: {
-      cell: {
-        index: index,
-        value: player
-      },
-      over: over
-    }
-  }
-
-  // it changes the turn of the player,}
-  player = player === 'X' ? 'O' : 'X'
-
-  // send the data to the API
-  api.updateGames(data)
-    .then(ui.onUpdateGamesSuccess)
-    .catch(ui.onUpdateGamesError)
 }
 
 const checkGameResult = function () {
+  // named each box
   const box1 = gameData[0]
   const box2 = gameData[1]
   const box3 = gameData[2]
@@ -65,8 +68,9 @@ const checkGameResult = function () {
   const box9 = gameData[8]
 
   if (box1 !== '' && box1 === box2 && box1 === box3) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
     over = true
+    $('#gameboard-message').text('Player ' + player + ' wins!')
+  // $(event.target.id).unbind('click')
   } else if (box4 !== '' && box4 === box5 && box4 === box6) {
     $('#gameboard-message').text('Player ' + player + ' wins!')
     over = true
@@ -89,6 +93,9 @@ const checkGameResult = function () {
     $('#gameboard-message').text('Player ' + player + ' wins!')
     over = true
   }
+  if (over === true) {
+    $('.box').off('click')
+  }
 }
 
 const showGames = function (event) {
@@ -100,6 +107,6 @@ const showGames = function (event) {
 
 module.exports = {
   createGames,
-  updateGames,
+  playGames,
   showGames
 }
