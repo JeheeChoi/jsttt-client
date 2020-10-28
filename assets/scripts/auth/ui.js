@@ -2,7 +2,7 @@ const store = require('./../store')
 
 const onSignUpSuccess = function (res) {
   const user = res.user
-  $('#sign-up-display').html(`
+  $('#message-display').html(`
     <p>New user
     ${user.email} successfully signed up!</p>
   `)
@@ -13,7 +13,7 @@ const onSignUpSuccess = function (res) {
 const onSignInSuccess = function (res) {
   const user = res.user
   store.user = res.user
-  $('#sign-in-display').html(`
+  $('#message-display').html(`
     <p>Hello
     ${user.email}! </p>
   `)
@@ -26,7 +26,7 @@ const onSignInSuccess = function (res) {
 }
 
 const onSignOutSuccess = function () {
-  $('#sign-out-display').html(`
+  $('#message-display').html(`
     <p>User ${store.user.email} successfully signed out! </p>
   `)
 
@@ -38,7 +38,7 @@ const onSignOutSuccess = function () {
 }
 
 const onChangePwSuccess = function () {
-  $('#change-pw-display').text('Password successfully changed!')
+  $('#message-display').text('Password successfully changed!')
   $('#change-password').trigger('reset')
 
   $('#sign-up').show()
@@ -50,24 +50,24 @@ const onChangePwSuccess = function () {
 
 // Error messages
 const onSignUpError = function (error) {
-  $('#sign-up-display').text('Error Signing Up Code: ' + error.statusText)
+  $('#message-display').text('Error Signing Up Code: ' + error.statusText)
   console.log('error is:', error)
   $('#sign-up').trigger('reset')
 }
 
 const onSignInError = function (error) {
-  $('#sign-in-display').text('Error Signing In Code: ' + error.statusText)
+  $('#message-display').text('Error Signing In Code: ' + error.statusText)
   console.log('error is:', error)
   $('#sign-in').trigger('reset')
 }
 
 const onSignOutError = function (error) {
-  $('#sign-out-display').text('Error Signing Out Code: ' + error.statusText + '. ' + 'Please Sign In First!')
+  $('#message-display').text('Error Signing Out Code: ' + error.statusText + '. ' + 'Please Sign In First!')
   console.log('error is:', error)
 }
 
 const onChangePwError = function (error) {
-  $('#change-pw-display').text('Error Changing Password Code: ' + error.statusText + '. ' + 'Please Sign In First!')
+  $('#message-display').text('Error Changing Password Code: ' + error.statusText + '. ' + 'Please Sign In First!')
   console.log('error is:', error)
   $('#change-password').trigger('reset')
 }

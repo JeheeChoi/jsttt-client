@@ -10,6 +10,7 @@ const createGames = function (event) {
   api.createGames()
     .then(ui.onCreateGamesSuccess)
     .then(() => $('.box').on('click', playGames))
+    .then(() => $('#gameboard-message').text(''))
     .then(() => { over = false })
     .then(() => { gameData = ['', '', '', '', '', '', '', '', ''] })
     .catch(ui.onCreateGamesError)
@@ -50,8 +51,6 @@ const playGames = function (event) {
     player = player === 'X' ? 'O' : 'X'
   // if the box is either X or O, the player can't choose the clicked the box to change the text on it
   // and it doesn't update the game array
-  } else if ($(event.target).text() === 'X' || $(event.target).text() === 'O') {
-    $('#gameboard-message').text('The box has been clicked already!')
   }
 }
 
@@ -69,32 +68,32 @@ const checkGameResult = function () {
 
   if (box1 !== '' && box1 === box2 && box1 === box3) {
     over = true
-    $('#gameboard-message').text('Player ' + player + ' wins!')
+    // $('#gameboard-message').text('Player ' + player + ' wins!')
   // $(event.target.id).unbind('click')
   } else if (box4 !== '' && box4 === box5 && box4 === box6) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
     over = true
+    // $('#gameboard-message').text('Player ' + player + ' won!')
   } else if (box7 !== '' && box8 && box7 === box9) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
     over = true
+    // $('#gameboard-message').text('Player ' + player + ' won!')
   } else if (box1 !== '' && box1 === box4 && box1 === box7) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
+    // $('#gameboard-message').text('Player ' + player + ' won!')
     over = true
   } else if (box2 !== '' && box2 === box5 && box2 === box8) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
+    // $('#gameboard-message').text('Player ' + player + ' won!')
     over = true
   } else if (box3 !== '' && box3 === box6 && box3 === box9) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
+    // $('#gameboard-message').text('Player ' + player + ' won!')
     over = true
   } else if (box1 !== '' && box1 === box5 && box1 === box9) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
+    // $('#gameboard-message').text('Player ' + player + ' won!')
     over = true
   } else if (box3 !== '' && box3 === box5 && box3 === box7) {
-    $('#gameboard-message').text('Player ' + player + ' wins!')
     over = true
   }
   if (over === true) {
     $('.box').off('click')
+    $('#gameboard-message').text('Player ' + player + ' won!')
   }
 }
 
