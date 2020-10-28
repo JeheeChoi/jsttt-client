@@ -1,7 +1,7 @@
 const store = require('./../store')
 
 const onCreateGamesSuccess = function (res) {
-  // $('#create-games-display').text('Successfully Created A New Game!')
+  $('#gameboard-message').html('<h4>Successfully Created A New Game! </h4>')
   // console.log(res)
   store.game = res.game
   $('#gameboard').show()
@@ -14,7 +14,7 @@ const onCreateGamesError = function (error) {
 }
 
 const onPlayGamesSuccess = function (res) {
-  // console.log(res)
+
 }
 
 const onPlayGamesError = function (error) {

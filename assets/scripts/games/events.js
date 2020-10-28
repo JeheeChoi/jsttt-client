@@ -10,14 +10,15 @@ const createGames = function (event) {
   api.createGames()
     .then(ui.onCreateGamesSuccess)
     .then(() => $('.box').on('click', playGames))
-    .then(() => $('#gameboard-message').text(''))
     .then(() => { over = false })
     .then(() => { gameData = ['', '', '', '', '', '', '', '', ''] })
+    .then(() => { player = 'X' })
     .catch(ui.onCreateGamesError)
 }
 
 const playGames = function (event) {
   event.preventDefault()
+  // .then(() => $('#gameboard-message').text(''))
   const index = event.target.id
 
   // if the box is empty(no X or O on it)
@@ -49,6 +50,8 @@ const playGames = function (event) {
 
     // it changes the turn of the player,}
     player = player === 'X' ? 'O' : 'X'
+    // $('#gameboard-message').html(`<h4>Next turn: ${player}</h4>`)
+
   // if the box is either X or O, the player can't choose the clicked the box to change the text on it
   // and it doesn't update the game array
   }
@@ -90,10 +93,13 @@ const checkGameResult = function () {
     over = true
   } else if (box3 !== '' && box3 === box5 && box3 === box7) {
     over = true
+  } else if (gameData.indexOf('') === -1) {
+    $('#gameboard-message').html('<h4>The game ends in a tie!</h4>')
+    // Thanks to Johan!!!
   }
   if (over === true) {
     $('.box').off('click')
-    $('#gameboard-message').text('Player ' + player + ' won!')
+    $('#gameboard-message').html('<h4>Player ' + player + ' won!</h4>')
   }
 }
 
