@@ -5,6 +5,7 @@ let gameData = ['', '', '', '', '', '', '', '', '']
 let player = 'X'
 let over = false
 
+// create new games
 const createGames = function (event) {
   event.preventDefault()
   api.createGames()
@@ -15,7 +16,7 @@ const createGames = function (event) {
     .then(() => { player = 'X' })
     .catch(ui.onCreateGamesError)
 }
-
+// Game engine
 const playGames = function (event) {
   event.preventDefault()
   // .then(() => $('#gameboard-message').text(''))
@@ -56,7 +57,7 @@ const playGames = function (event) {
   // and it doesn't update the game array
   }
 }
-
+// check the game result and prints the winner message
 const checkGameResult = function () {
   // named each box
   const box1 = gameData[0]
@@ -102,7 +103,7 @@ const checkGameResult = function () {
     $('#gameboard-message').html('<h4>Player ' + player + ' won!</h4>')
   }
 }
-
+// shows the # of the games played
 const showGames = function (event) {
   event.preventDefault()
   api.showGames()
