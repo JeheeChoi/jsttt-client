@@ -1,4 +1,4 @@
-# Application Title: A Description
+# J's TTT : By C3
 
 This application allows the user to complete basic authentication activities and play  Maybe here's a reason why I wanted to do this project, or
 came up with this idea.
