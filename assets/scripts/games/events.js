@@ -14,26 +14,28 @@ const createGames = function (event) {
     .then(() => { over = false })
     .then(() => { gameData = ['', '', '', '', '', '', '', '', ''] })
     .then(() => { player = 'X' })
+  // .then(() => $('#gameboard-message').text(''))
     .catch(ui.onCreateGamesError)
 }
 // Game engine
 const playGames = function (event) {
   event.preventDefault()
-  // .then(() => $('#gameboard-message').text(''))
+
   const index = event.target.id
 
   // if the box is empty(no X or O on it)
   if ($(event.target).text() !== 'X' && $(event.target).text() !== 'O') {
-  // add the player token to the clicked box
+    // add the player token to the clicked box
     $(event.target).text(player)
     // then add the player token to the gameData array
     gameData[index] = player
-    console.log(gameData)
+
+    // console.log(gameData)
+
     // check if the player wins the game
     checkGameResult()
 
     // build the data object to pass to play games
-
     const data = {
       game: {
         cell: {

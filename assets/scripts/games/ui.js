@@ -14,7 +14,6 @@ const onCreateGamesError = function (error) {
 }
 
 const onPlayGamesSuccess = function (res) {
-
 }
 
 const onPlayGamesError = function (error) {
@@ -25,7 +24,10 @@ const onPlayGamesError = function (error) {
 const onShowGamesSuccess = function (res) {
   // console.log(res)
   const games = res.games
-  $('#gameboard-message').text('# of games played: ' + games.length)
+  $('#gameboard-message').html(`
+    <h4># of games played: ${games.length} </h4>
+    `)
+
   // $('#show-games').trigger('reset')
 
   // games.forEach(function (currentGame) {

@@ -11,8 +11,9 @@ body {
   border: 3px solid #fff;
   padding: 10px;
   margin: 50px auto;
-  max-height: calc(100vh - 720px);
-  max-width: calc(100vh - 650px);
+  max-height: calc(100vh - 500px);
+  max-width: calc(100vh - 480px);
+
 
 }
 .container-auth input {
@@ -21,15 +22,15 @@ body {
 
 .gameboard {
   height: 100vh;
-  max-height: 500px;
-  max-width: 500px;
+  max-height: 800px;
+  max-width: 800px;
 
 }
 .row-cols-3 {
   margin: 0px auto;
   height: 150px;
   max-height: calc(100vh - 250px);
-  max-width: calc(100vh - 450px);
+  max-width: calc(100vh - 350px);
 
 }
 
