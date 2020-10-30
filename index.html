@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+    </head>
+    <body class="text-center">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="92" height="92">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="92" height="92">
+      <img class="mb-4" src="https://i.imgur.com/sLbysz0.jpg" alt="" width="92" height="92">
+      <h4>By C3(Crying.Coding.Choi)</h4>
+      <br>
+
+      <form id="sign-up">
+      <div class="container-auth">
+        <h3>Sign Up</h3>
+      <!-- <label for="sign-up-email">Email</label> -->
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
+      <!-- <label for="sign-up-password">Password</label> -->
+        <input required type="password" name="credentials[password]" placeholder="Password" />
+      <!-- <label for="sign-up-password-confirmation"></label> -->
+        <input required type="password" name="credentials[password_confirmation]" placeholder="Confirm password" /><br>
+        <input type="Submit" value="REGISTER" />
+      </div>
+      </form>
+
+      <div id="message-display"></div>
+
+
+      <form id="sign-in">
+      <div class="container-auth">
+        <h3>Sign In</h3>
+        <!-- <label for="sign-in-email"></label> -->
+        <input required type="text" name="credentials[email]" placeholder ="Email address" />
+        <!-- <label for="sign-in-password"></label> -->
+        <input required type="password" name="credentials[password]" placeholder="Password"/><br>
+        <input type="Submit" value="SIGN IN" />
+      </div>
+      </form>
+
+
+      <br>
+
+      <form id="sign-out">
+      <div class="container-auth">
+      <h3>Sign Out</h3>
+        <input type="Submit" value="SIGN OUT" />
+      </div>
+      </form>
+
+      <form id="change-password">
+      <div class="container-auth">
+      <h3>Change PW</h3>
+      <!-- <label for="original-password"></label> -->
+      <input required type="password" name="passwords[old]" placeholder="Original password"/>
+      <br>
+      <!-- <label for="new-password"></label> -->
+      <input required type="password" name="passwords[new]" placeholder="New password" /><br>
+      <input type="Submit" value="SUBMIT" />
+      </div>
+      </form>
+
+      <form id="create-show-games">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+        <label class="btn btn-secondary active">
+          <input type="radio" name="options" id="create-games" />PLAY A New Game
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="options" id="show-games" /> VIEW # Of Games
+        </label>
+      </div>
+      </form>
+
+      <br>
+      <br>
+      <!-- <h3>New Game</h3>
+      <button id="create-games">PLAY</button>
+      <div id="create-games-display"></div>
+      <br>
+
+      <h3>Games Played</h3>
+      <button id="show-games">VIEW</button>
+       -->
+      <div id="gameboard-message"></div>
+
+      <div id="gameboard" class="container">
+        <div class="row row-cols-3">
+          <div id="0" class="col-4-box box" data-cell-index="0">?</div>
+          <div id="1" class="col-4-box box" data-cell-index="1">?</div>
+          <div id="2" class="col-4-box box" data-cell-index="2">?</div>
+        </div>
+        <div class="row row-cols-3">
+          <div id="3" class="col-4-box box" data-cell-index="3">?</div>
+          <div id="4" class="col-4-box box" data-cell-index="4">?</div>
+          <div id="5" class="col-4-box box" data-cell-index="5">?</div>
+        </div>
+        <div class="row row-cols-3">
+          <div id="6" class="col-4-box box" data-cell-index="6">?</div>
+          <div id="7" class="col-4-box box" data-cell-index="7">?</div>
+          <div id="8" class="col-4-box box" data-cell-index="8">?</div>
+        </div>
+      </div>
+        <br>
+        <br>
+    </body>
+</html>
