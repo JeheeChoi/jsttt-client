@@ -1,4 +1,4 @@
-# J's TTT : By C3
+# J's TTT(Tic Tac Toe) : By C3
 
 This application allows the user to complete basic authentication activities and play  Maybe here's a reason why I wanted to do this project, or
 came up with this idea.
