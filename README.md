@@ -1,7 +1,7 @@
 # J's TTT(Tic Tac Toe) : By C3
 
-This application allows the user to complete basic authentication activities and play  Maybe here's a reason why I wanted to do this project, or
-came up with this idea.
+This Tic Tac Toe Single Page Application allows the user to complete the basic authentication activities and play tic tac toe game. 
+Through this project, I wanted to make sure that I am fully understanding how SPA works with API, and I can utilize HTML/CSS, JavaScript I learned for the last 3 weeks.
 
 ## Important Links
 
