@@ -11,7 +11,12 @@ Through this project, I wanted to make sure that I am fully understanding how SP
 
 ## Planning Story
 
-For this 4 day project, I planned on following the suggested schedule, working step by step: Index.html-app.js-events.js-ui.js using a local server. Day 1 was great by making good progress on sign-in/sign-up/change pw/sign out features on my SPA. But on day 2, I adjusted my project schedule a little bit in order to make the features work together with each other.(ex. Update games/Show games/Play games). On Day 3 I built the game logic using pseudocode, commented every single line as I wrote the game engine function. On day 4, I worked on a little bit of styling of my webpage, made it look simple and clean but focused on my game functionality. 
+For this 4 day project, I planned on following the suggested schedule, working step by step using a local server. 
+
+- Day 1 - Working on sign-in/sign-up/change pw/sign out features on my SPA. 
+- Day 2 - Working on game API - game function
+- Day 3 - Building the game logic using pseudocode
+- Day 4 - Working on styling of the webpage while keep working on the game functionality
 
 ### User Stories
 
