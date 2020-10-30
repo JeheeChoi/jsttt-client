@@ -123,9 +123,9 @@ const playGames = function (event) {
 //     $('#gameboard-message').html('<h4>Player ' + player + ' won!</h4>')
 //   }
 // }
-
+// new checkGameStatus function
 const checkGameStatus = function () {
-  // Horizontal line 012 345 678
+  // Check Horizontal line 012 345 678
   for (let i = 0; i < 9; i += 3) {
     if (gameData[i] !== '' && gameData[i] === gameData[i + 1] && gameData[i] === gameData[i + 2]) {
       if (gameData[i] === 'X') {
@@ -134,7 +134,7 @@ const checkGameStatus = function () {
         return 'O'
       }
     }
-    // Vertical line - 036 147 258
+    // Check Vertical line - 036 147 258
     for (let i = 0; i < 3; i++) {
       if (gameData[i] !== '' && gameData[i] === gameData[i + 3] && gameData[i] === gameData[i + 6]) {
         if (gameData[i] === 'X') {
@@ -145,7 +145,7 @@ const checkGameStatus = function () {
       }
     }
   }
-  // diagonal 048
+  // Check diagonal 048
   if (gameData[0] !== '' && gameData[0] === gameData[4] && gameData[0] === gameData[8]) {
     if (gameData[0] === 'X') {
       return 'X'
@@ -153,7 +153,7 @@ const checkGameStatus = function () {
       return 'O'
     }
   }
-  // diagonal 246
+  // Check diagonal 246
   if (gameData[2] !== '' && gameData[2] === gameData[4] && gameData[2] === gameData[6]) {
     if (gameData[2] === 'X') {
       return 'X'
@@ -162,15 +162,16 @@ const checkGameStatus = function () {
     }
   }
 
-  // tie game result
+  // Check Tie game result
   let count = 0
-  // Using a for loop to loop through each index to check if there's any '' index
+  // Using a for loop to loop through
+  // to check all 9 indices in GameData array if any of them are empty(No X or O)
   for (let i = 0; i < gameData.length; i++) {
     if (gameData[i] !== '') {
       count++
     }
   }
-  // if all 9 indices
+
   if (count === gameData.length) {
     return 0
   } else {

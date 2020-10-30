@@ -5,6 +5,7 @@ const onCreateGamesSuccess = function (res) {
   // console.log(res)
   store.game = res.game
   $('#gameboard').show()
+  $('#gameboard-message').show()
   $('.box').text('?')
 }
 

@@ -32,6 +32,8 @@ const onSignOutSuccess = function () {
   $('#sign-out').hide()
   $('#change-password').hide()
   $('#create-show-games').hide()
+  $('#gameboard').hide()
+  $('#gameboard-message').hide()
   $('#sign-up').show()
   $('#sign-in').show()
 }
@@ -39,12 +41,11 @@ const onSignOutSuccess = function () {
 const onChangePwSuccess = function () {
   $('#message-display').html('<h4>Password successfully changed! </h4>')
   $('#change-password').trigger('reset')
-
-  $('#sign-up').show()
-  $('#sign-in').show()
-  $('#change-password').hide()
-  $('#sign-out').hide()
-  $('#create-show-games').hide()
+  // $('#sign-up').show()
+  // $('#sign-in').show()
+  // $('#change-password').hide()
+  // $('#sign-out').hide()
+  $('#create-show-games').show()
 }
 
 // Error messages
