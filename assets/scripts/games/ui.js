@@ -9,17 +9,7 @@ const onCreateGamesSuccess = function (res) {
   $('.box').text('?')
 }
 
-const onCreateGamesError = function (error) {
-  $('#message-display').text('Error Creating Games Code: ' + error.statusText + '. ' + 'Please Sign In First!')
-  // console.log('error is:', error)
-}
-
 const onPlayGamesSuccess = function (res) {
-}
-
-const onPlayGamesError = function (error) {
-  $('#gameboard-message').text('Error Playing Games Code: ' + error.statusText)
-  // console.log('error is:', error)
 }
 
 const onShowGamesSuccess = function (res) {
@@ -40,6 +30,16 @@ const onShowGamesSuccess = function (res) {
   // })
 }
 
+const onCreateGamesError = function (error) {
+  $('#message-display').text('Error Creating Games Code: ' + error.statusText + '. ' + 'Please Sign In First!')
+  // console.log('error is:', error)
+}
+
+const onPlayGamesError = function (error) {
+  $('#gameboard-message').text('Error Playing Games Code: ' + error.statusText)
+  // console.log('error is:', error)
+}
+
 const onShowGamesError = function (error) {
   $('#message-display').text('Error Showing Games Code: ' + error.statusText + '. ' + 'Please Sign In First!')
   // console.log('error is:', error)
@@ -47,9 +47,9 @@ const onShowGamesError = function (error) {
 
 module.exports = {
   onCreateGamesSuccess,
-  onCreateGamesError,
   onPlayGamesSuccess,
-  onPlayGamesError,
   onShowGamesSuccess,
+  onPlayGamesError,
+  onCreateGamesError,
   onShowGamesError
 }
