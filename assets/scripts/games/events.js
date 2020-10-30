@@ -164,12 +164,13 @@ const checkGameStatus = function () {
 
   // tie game result
   let count = 0
-
+  // Using a for loop to loop through each index to check if there's any '' index
   for (let i = 0; i < gameData.length; i++) {
     if (gameData[i] !== '') {
       count++
     }
   }
+  // if all 9 indices
   if (count === gameData.length) {
     return 0
   } else {
