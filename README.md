@@ -9,7 +9,7 @@ Through this project, I wanted to make sure that I am fully understanding how SP
 - [Deployed API](www.link.com)
 - [Deployed Client]( https://jeheechoi.github.io/jsttt-client/)
 
-## Planning Story
+## Planning Story & Development Process
 
 For this 4 day project, I planned on following the suggested schedule, working step by step using a local server. 
 
@@ -17,6 +17,15 @@ For this 4 day project, I planned on following the suggested schedule, working s
 - Day 2 - Working on game API - game function
 - Day 3 - Building the game logic using pseudocode
 - Day 4 - Working on styling of the webpage while keep working on the game functionality
+
+During the project my project schedule's got adjusted as:
+
+- Day 1 - Understanding the game project and reading the project requirement
+- Day 2 - Understanding the API and the relationship with the SPA, slowly building event listeners & handlers
+- Day 3 - I had a hard time writing down game logic, couldn't make any progress without help. then, I started using psuedocode method - added comments on each line
+- Day 4 - As I make a progress, I was keep getting into another issue/bug problem
+- Extra days - My game project was not complete by day 4, I worked on styling a bit but kept working on the game function
+
 
 ### User Stories
 
