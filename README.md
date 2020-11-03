@@ -18,7 +18,7 @@ For this 4 day project, I planned on following the suggested schedule, working s
 - Day 3 - Building the game logic using pseudocode
 - Day 4 - Working on styling of the webpage while keep working on the game functionality
 
-During the project my project schedule's got adjusted as:
+During the project my schedule's got adjusted as:
 
 - Day 1 - Understanding the game project and reading the project requirement
 - Day 2 - Understanding the API and the relationship with the SPA, slowly building event listeners & handlers
