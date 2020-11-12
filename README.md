@@ -5,9 +5,9 @@ Through this project, I wanted to make sure that I am fully understanding how SP
 
 ## Important Links
 
-- [Project Repo](https://git.generalassemb.ly/gundyn/game-project)
-- [Deployed API](www.link.com)
-- [Deployed Client]( https://jeheechoi.github.io/jsttt-client/)
+- [!Project Repo](https://git.generalassemb.ly/gundyn/game-project)
+- [!Deployed API](www.link.com)
+- [!Deployed Client]( https://jeheechoi.github.io/jsttt-client/)
 
 ## Planning Story & Development Process
 
